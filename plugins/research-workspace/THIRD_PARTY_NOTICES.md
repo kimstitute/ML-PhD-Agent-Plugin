@@ -1,0 +1,18 @@
+# Provenance and reuse decisions
+
+Source inspection pinned on 2026-10-12. Full upstream checkouts live in the development-only `.upstream/` folder and are NOT part of this plugin. No upstream installers were run.
+
+## Copied/adapted MIT materials
+
+- [Oh My Paper](https://github.com/LigphiDonk/Oh-my--paper), commit `6baece9f13324c209592124ebc213289336f26c3`. Five role responsibilities, scoped project memory, handoff/review model adapted into `agents/`, `skills/research/references/roles.md`, writing/review skills. Original `.pipeline/` direct state writes and host-specific report-parsing hooks replaced with our shared file journal. The upstream app, installers, remote compute integrations and bundled third-party skill catalog are not copied. License: `licenses/oh-my-paper.txt`.
+- [ResearcherSkill](https://github.com/krzysztofdudek/ResearcherSkill), commit `034ec64d73c0809b97bd3ddfc57e1e6b0ddcec9a`. Resume/baseline/THINK–TEST–REFLECT/negative-result workflow adapted into `research-experiment`. Removed autonomous hard resets, infinite budgets, arbitrary universal thresholds and mandatory subagent evaluation. License: `licenses/researcher-skill.txt`.
+- [ml-researcher-os](https://github.com/maximussthegreat/ml-researcher-os), commit `5b1404d5aa4697dfd025fa9100169b3bf7f8b93d`. Four report/plan/checklist templates copied with attribution; reproducibility-auditor and claim-support approach adapted into review/analysis. Its Python runtime and keyword claim extraction are not copied. License: `licenses/ml-researcher-os.txt`.
+- [literature-review-skill](https://github.com/pinshuai/literature-review-skill), commit `ed62a2899202707b58e87e4cd6ae45792772fe58`. Balanced-parenthesis DOI extraction algorithm ported from `scripts/verify_citations.py` into `scripts/citations.mjs`; search/screen/thematic synthesis workflow adapted. Identifier resolution, metadata registration and network uncertainty now have distinct statuses. Original requests/PDF dependencies are not required. License: `licenses/literature-review-skill.txt` (retains the upstream K-Dense copyright).
+
+## Original implementation inspired by inspected license-unspecified sources
+
+- [agent-research-skills](https://github.com/lingzhi227/agent-research-skills), `9e6c085d65e313e475e921fdfe795ac11eb7589e`: considered backwards traceability; implemented our own hash/locator provenance rather than copying source or the hard-coded paths/LaTeX-number machinery.
+- [ml-researcher](https://github.com/genai-io/ml-researcher), `98d37cbc10538a3f1639e8482d6da49dd87aaa6f`: considered test isolation, leakage, ablations and seed sensitivity; wrote original project-specific safeguards and comparison code. Did not copy scripts or instruction text, including references to missing executables.
+- [agent-skills](https://github.com/jurgendn/agent-skills), `f290312fb6c55a044402e8649afff5c112e660ab`: considered failure-slice analysis and hypothesis stress testing; wrote original CV analysis guidance, not a clone of the 88-skill collection.
+
+No explicit LICENSE file was found for these three snapshots. Their text/code is not part of the distributable plugin. At the user's explicit request, `scripts/import-sources.mjs --allow-unlicensed` copies selected original material from all six local clones into a project's private `.research/vendor/`; the source index records each path/hash/commit. This private library is consulted by the research skill but not installed as global skills/hooks. It does not establish third-party redistribution rights. The new journal/CLI/hooks/tests/comparison implementation is original; the DOI extractor is the identified exception.

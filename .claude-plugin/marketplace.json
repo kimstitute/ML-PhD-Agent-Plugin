@@ -1,0 +1,10 @@
+{
+  "name": "ml-phd-agent",
+  "owner": { "name": "kimstitute" },
+  "plugins": [{
+    "name": "research-workspace",
+    "source": "./plugins/research-workspace",
+    "description": "An ML research coworker with project-local memory for Claude Code and Codex.",
+    "version": "0.1.0"
+  }]
+}

@@ -1,0 +1,7 @@
+.upstream/
+.research/
+.test-artifacts/
+.publish/
+node_modules/
+dist/
+__pycache__/

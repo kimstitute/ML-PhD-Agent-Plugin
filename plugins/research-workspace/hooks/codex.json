@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "SessionStart": [{ "hooks": [{ "type": "command", "command": "node \"${PLUGIN_ROOT}/scripts/hook.mjs\" session", "timeout": 10 }] }]
+  }
+}

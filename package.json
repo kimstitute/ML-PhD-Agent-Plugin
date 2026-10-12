@@ -1,0 +1,12 @@
+{
+  "name": "ml-phd-agent-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/workspace.test.mjs tests/analysis.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run validate && npm test"
+  }
+}

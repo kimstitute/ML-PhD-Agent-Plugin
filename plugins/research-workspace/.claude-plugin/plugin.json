@@ -1,0 +1,8 @@
+{
+  "name": "research-workspace",
+  "version": "0.1.0",
+  "description": "An ML research coworker: literature, experiments, evidence, writing and review with project-local memory.",
+  "author": { "name": "kimstitute" },
+  "repository": "https://github.com/kimstitute/ML-PhD-Agent-Plugin",
+  "license": "MIT"
+}

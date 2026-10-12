@@ -1,0 +1,10 @@
+{
+  "name": "ml-phd-agent",
+  "interface": { "displayName": "ML PhD Agent" },
+  "plugins": [{
+    "name": "research-workspace",
+    "source": { "source": "local", "path": "./plugins/research-workspace" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+    "category": "Productivity"
+  }]
+}

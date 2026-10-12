@@ -1,0 +1,18 @@
+{
+  "name": "research-workspace",
+  "version": "0.1.0",
+  "description": "An ML research coworker with durable project-local memory.",
+  "author": { "name": "kimstitute" },
+  "repository": "https://github.com/kimstitute/ML-PhD-Agent-Plugin",
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": "./hooks/codex.json",
+  "interface": {
+    "displayName": "ML PhD Agent",
+    "shortDescription": "A research coworker with project-local memory",
+    "brandColor": "#14B8A6",
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
+    "defaultPrompt": ["Initialize this research project's workspace", "Read this project's research state and suggest the next experiment"]
+  }
+}
