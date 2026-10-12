@@ -22,7 +22,7 @@ for (const relative of ['.agents/plugins/marketplace.json', '.claude-plugin/mark
 const directories = fs.readdirSync(path.join(plugin, 'skills'));
 for (const name of directories) {
   const file = path.join(plugin, 'skills', name, 'SKILL.md');
-  const content = fs.readFileSync(file, 'utf8');
+  const content = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
   check(content.startsWith(`---\nname: ${name}\n`), `Skill name mismatch: ${name}`);
   check(/^description: .+/m.test(content), `Missing skill description: ${name}`);
   for (const link of content.matchAll(/\]\(([^)]+)\)/g)) {
@@ -44,3 +44,4 @@ for (const license of ['oh-my-paper', 'researcher-skill', 'literature-review-ski
 check(!fs.existsSync(path.join(plugin, '.research')) && !fs.existsSync(path.join(plugin, '.upstream')), 'Private sources leaked into distributable plugin');
 process.stdout.write(`${directories.length} skills; 2 host manifests; 2 marketplaces; syntax/references/licenses checked. ${errors} errors.\n`);
 process.exitCode = errors ? 1 : 0;
+
